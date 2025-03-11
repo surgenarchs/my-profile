@@ -5,10 +5,6 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { BrainCircuit, Command, MenuIcon, PhoneCall, X } from "lucide-react";
 import Image from "next/image";
-import {
-  NavigationMenuLink,
-
-} from "@/components/ui/navigation-menu";
 import { NavSecondary } from "./nav-secondary";
 import { NavMain } from "./nav-main";
 

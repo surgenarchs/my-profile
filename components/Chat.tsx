@@ -49,14 +49,14 @@ export default function Chatbot() {
 
       setTypingMessage(""); // Clear previous typing effect
       animateBotResponse(botResponse);
-    } catch (error) {
-      // console.error("❌ API Error:", error.response?.data || error.message);
+    } catch {
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "Error fetching response. Try again later." },
       ]);
       setLoading(false);
     }
+    
   };
 
   // Function to simulate word-by-word typing effect

@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
 import { PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Typed from 'typed.js';
@@ -37,7 +36,6 @@ const skills = [
 ];
 
 export default function Dashboard() {
-  const { theme } = useTheme();
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [hoveredSkill, setHoveredSkill] = useState<{ name: string; description: string } | null>(null);
 
