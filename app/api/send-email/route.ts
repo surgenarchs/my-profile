@@ -5,12 +5,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    // Define the expected request body type
+    const { name, email, message }: { name: string; email: string; message: string } = await req.json();
 
+    // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json({ error: "All fields are required." }, { status: 400 });
     }
 
+    // Send email using Resend API
     const response = await resend.emails.send({
       from: email,
       to: ["surgenarchs@gmail.com"],
@@ -21,9 +24,10 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true, response });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    if (error instanceof Error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ error: "An unexpected error occurred." }, { status: 500 });
   }
 }
-
-
