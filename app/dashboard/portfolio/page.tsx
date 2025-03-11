@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -87,7 +88,7 @@ export default function CaseStudies() {
                 <CardTitle className="text-green-500 text-xl">{project.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col items-center">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-40 object-cover rounded-md transition-transform hover:scale-105"
