@@ -38,7 +38,6 @@ const skills = [
 
 export default function Dashboard() {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [hoveredSkill, setHoveredSkill] = useState<{ name: string; description: string } | null>(null);
 
@@ -159,8 +158,9 @@ export default function Dashboard() {
                 className="absolute"
               >
                 <p className="mt-4 text-gray-700 dark:text-gray-300 italic">
-                  "{testimonials[testimonialIndex].feedback}"
+                  &ldquo;{testimonials[testimonialIndex].feedback}&rdquo;
                 </p>
+
                 <p className="mt-2 text-green-700 dark:text-green-400 font-semibold">
                   {testimonials[testimonialIndex].name}
                 </p>

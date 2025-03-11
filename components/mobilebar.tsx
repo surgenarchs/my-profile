@@ -26,10 +26,7 @@ const navMain = [
     },
   ];
 // Sidebar Menu Items
-const menuItems = [
-  { title: "Portfolio", href: "/dashboard/portfolio", description: "Find more about what we do" },
-  { title: "Services", href: "/dashboard/services", description: "Service is what we offer" },
-];
+
 
 const navSecondary = [
     { title: "Reach out", url: "/dashboard/contacts", icon: PhoneCall },
@@ -106,25 +103,3 @@ export default function MobileSidebar() {
   );
 }
 
-// Reusable List Item Component
-interface NavItemProps {
-  title: string;
-  href: string;
-  description: string;
-  onClick: () => void;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ title, href, description, onClick }) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <Link
-        href={href}
-        onClick={onClick}
-        className="block p-3 border-b rounded-md transition-colors "
-      >
-        <div className="text-sm font-medium">{title}</div>
-        <p className="text-xs text-gray-500">{description}</p>
-      </Link>
-    </NavigationMenuLink>
-  </li>
-);

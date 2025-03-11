@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { useTheme } from 'next-themes';
 
 interface Message {
   sender: "bot" | "user";
@@ -15,7 +14,6 @@ const API_KEY = process.env.CHAT_API_KEY; // 🔹 Replace with your Hugging Face
 const API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill";
 
 export default function Chatbot() {
-  const { theme, setTheme } = useTheme();
   const [messages, setMessages] = useState<Message[]>([
     { sender: "bot", text: "Hello! How can I assist you today?" },
   ]);
