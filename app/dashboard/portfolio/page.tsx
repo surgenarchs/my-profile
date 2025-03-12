@@ -18,7 +18,7 @@ export default function CaseStudies() {
       >
         <h1 className="text-4xl font-bold text-green-500">Our Case Studies & Portfolio</h1>
         <p className="mt-2 text-gray-400">
-          Discover how we've transformed businesses with AI & Data Science.
+          Discover how we have transformed businesses with AI & Data Science.
         </p>
       </motion.div>
 
