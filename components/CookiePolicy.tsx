@@ -11,13 +11,14 @@ export default function CookiePolicy() {
     personalization: false,
     security: true,
   });
-
-  const toggleCookieSetting = (type: string) => {
+  
+  const toggleCookieSetting = (type: keyof typeof cookieSettings) => {
     setCookieSettings((prev) => ({
       ...prev,
       [type]: !prev[type],
     }));
   };
+
 
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-6">
